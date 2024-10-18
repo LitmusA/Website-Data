@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer 40K Factions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Warhammer 40K Factions</h1>
+        </header>
+
+        <section>
+            <h2>Select a Faction</h2>
+            <select id="faction-select">
+                <option value="">-- Select Faction --</option>
+                <option value="spaceMarines">Space Marines</option>
+                <option value="necrons">Necrons</option>
+                <option value="eldar">Eldar</option>
+                <option value="orks">Orks</option>
+            </select>
+            <button id="show-info-btn">Show Info</button>
+        </section>
+
+        <section id="faction-info">
+            <h2>Faction Information</h2>
+            <p id="faction-details">Select a faction to view its details.</p>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d2d2d;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #000;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    color: #FFD700;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+select, button {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #FFD700;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e5c100;
+}
+
+#faction-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+}
+
+#faction-details {
+    color: #FFD700;
+}
+// Faction details object
+const factionDetails = {
+    spaceMarines: "The Space Marines are humanity's greatest defenders, genetically modified warriors with unwavering loyalty to the Emperor.",
+    necrons: "The Necrons are an ancient race of skeletal robots, seeking to reclaim the galaxy they once ruled.",
+    eldar: "The Eldar are a dying race of highly psychic warriors, fighting to preserve their dwindling numbers.",
+    orks: "The Orks are a brutal and barbaric race, living for nothing more than war and destruction."
+};
+
+// Get elements
+const factionSelect = document.getElementById('faction-select');
+const showInfoBtn = document.getElementById('show-info-btn');
+const factionDetailsEl = document.getElementById('faction-details');
+
+// Event listener for the button
+showInfoBtn.addEventListener('click', () => {
+    const selectedFaction = factionSelect.value;
+
+    if (selectedFaction) {
+        factionDetailsEl.textContent = factionDetails[selectedFaction];
+    } else {
+        factionDetailsEl.textContent = "Please select a faction to view its details.";
+    }
+});
