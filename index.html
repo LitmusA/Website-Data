@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer 40K Factions</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Warhammer 40K Factions</h1>
+        </header>
+
+        <section>
+            <h2>Select a Faction</h2>
+            <select id="faction-select">
+                <option value="">-- Select Faction --</option>
+                <option value="spaceMarines">Space Marines</option>
+                <option value="necrons">Necrons</option>
+                <option value="eldar">Eldar</option>
+                <option value="orks">Orks</option>
+            </select>
+            <button id="show-info-btn">Show Info</button>
+        </section>
+
+        <section id="faction-info">
+            <h2>Faction Information</h2>
+            <p id="faction-details">Select a faction to view its details.</p>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
